@@ -14,7 +14,7 @@ public class Matematicas {
         return a * b;
     }
     public static int divide(int a, int b) {
-        return a / b;
+        return b != 0 ? a / b : 0;
     }
     public static int modulo(int a, int b) {
         return a % b;
