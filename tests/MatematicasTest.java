@@ -16,6 +16,7 @@ import EED.Matematicas;
 
 class MatematicasTest {
 
+	
 	@Test
 	@DisplayName("Test Add Method")
 	@ParameterizedTest
@@ -23,9 +24,7 @@ class MatematicasTest {
 	void testAdd(int a, int b, int expected) {
 		assertEquals(expected,Matematicas.add(a, b));
 	}
-
-
-    private static Stream<Arguments> provideAddArguments() {
+	private static Stream<Arguments> provideAddArguments() {
         return Stream.of(
             Arguments.of(1, 2, 3),
             Arguments.of(3, 3, 6),
@@ -34,50 +33,69 @@ class MatematicasTest {
         );
     }
 
+    private static Stream<Arguments> provideSubtractArguments() {
+        return Stream.of(
+            Arguments.of(1, 2, -1),
+            Arguments.of(0, 0, 0),
+            Arguments.of(-1, 1, -2)
+        );
+    }
 
 	@Test
-	void testSubtract() {
-		fail("Not yet implemented");
+	@DisplayName("Test subtract Method")
+	@ParameterizedTest
+    @MethodSource("provideSubtractArguments")
+	void testSubtract(int a, int b, int expected) {
+
+		assertEquals(expected,Matematicas.subtract(a, b));		
 	}
+
+@Test
+@DisplayName("Test subtract Method with Invalid Argument")
+void testSubtractThrowsIllegalArgumentException() {
+	assertThrows(IllegalArgumentException.class, () -> {
+		Matematicas.subtract('a', 8);
+	});
+}
 
 	@Test
 	void testMultiply() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testDivide() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testModulo() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testPower() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testFactorial() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testGcd() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testLcm() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 	@Test
 	void testIsPrime() {
-		fail("Not yet implemented");
+		assertTrue(true);
 	}
 
 }

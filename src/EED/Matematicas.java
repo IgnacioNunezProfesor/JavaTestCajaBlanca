@@ -1,15 +1,18 @@
 package EED;
 
-
-
 public class Matematicas {
 
     public static int add(int a, int b) {
         return a + b;
     }
-    public static int subtract(int a, int b) {
-        return a - b;
+
+    public static int subtract(Object a, Object b) {
+        if (!(a instanceof Integer) || !(b instanceof Integer)) {
+            throw new IllegalArgumentException("Los argumentos deben ser enteros.");
+        }
+        return (Integer) a - (Integer) b;
     }
+        
     public static int multiply(int a, int b) {
         return a * b;
     }
